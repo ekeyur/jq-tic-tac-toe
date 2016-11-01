@@ -15,12 +15,15 @@ $(document).ready(function () {
         $(this).text('X');
         bool = true;
         }
+
       else if (bool === true) {
         $(this).addClass('pressed');
         $(this).text('O');
         bool = false;
         }
     }
+// computer's turn
+
     var k = 0;
     for(var i=0;i<3;i++){
       if(i===1){k=3;}
@@ -31,21 +34,23 @@ $(document).ready(function () {
       }
     }
       counter++;
-      if(tictactoe(arr) === 'X'){
+      var winplayer = tictactoe(arr);
+      if(winplayer === 'X'){
         x_win++;
-        $('.win').text('Player X won').show();
+        $('.win').text('Player '+winplayer+' won').show();
         $('.square').prop('disabled',true);
         $('.play-again').show();
       }
-      else if(tictactoe(arr) === 'O'){
+      else if(winplayer === 'O'){
         o_win++;
-        $('.win').text('Player O won').show();
+        $('.win').text('Player '+winplayer+' won').show();
         $('.square').prop('disabled',true);
         $('.play-again').show();
       }
-      else if((counter==9) && (tictactoe(arr) === null)){
+      else if((counter==9) && (winplayer === null)){
         draw++;
-        counter = 0;
+
+        $('.win').text('Draw. Try again to win').show();
         $('.square').prop('disabled',true);
         $('.play-again').show();
       }
@@ -56,14 +61,14 @@ $(document).ready(function () {
 
 
     $('.play-again').click(function(){
-      $('.square').removeClass('pressed').text('');
-      $('.square').prop('disabled',false);
+      $('.square').prop('disabled',false).removeClass('pressed').text('');
       $('.win').hide();
       for(var i=0;i<3;i++){
         for(var j=0;j<3;j++){
           arr[i][j] = '';
         }
       }
+      counter = 0;
       $('this').hide();
     });
   });
