@@ -1,0 +1,19 @@
+.box{
+  height: 400px;
+  width: 500px;
+}
+
+.square{
+  height: 150px;
+  width: 150px;
+  font-size: 3em;
+  font-weight: bold;
+}
+
+.pressed{
+  background-color: aqua;
+}
+
+.btn-default.pressed:hover{
+  background-color: aqua;
+}
