@@ -9,11 +9,18 @@
   font-size: 3em;
   font-weight: bold;
 }
-
-.pressed{
-  background-color: aqua;
+.pressed-x{
+  background-color: orange;
 }
 
-.btn-default.pressed:hover{
-  background-color: aqua;
+.pressed-o{
+  background-color: green;
+}
+
+.btn-default.pressed-x:hover{
+  background-color: orange;
+}
+
+.btn-default.pressed-o:hover{
+  background-color: green;
 }

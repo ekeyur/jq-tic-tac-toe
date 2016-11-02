@@ -11,13 +11,13 @@ $(document).ready(function () {
 
     if($btn_val === ''){
       if((bool === false)){
-        $(this).addClass('pressed');
+        $(this).addClass('pressed-x');
         $(this).text('X');
         bool = true;
         }
 
       else if (bool === true) {
-        $(this).addClass('pressed');
+        $(this).addClass('pressed-o');
         $(this).text('O');
         bool = false;
         }
@@ -61,7 +61,7 @@ $(document).ready(function () {
 
 
     $('.play-again').click(function(){
-      $('.square').prop('disabled',false).removeClass('pressed').text('');
+      $('.square').prop('disabled',false).removeClass('pressed-x').removeClass('pressed-o').text('');
       $('.win').hide();
       for(var i=0;i<3;i++){
         for(var j=0;j<3;j++){
